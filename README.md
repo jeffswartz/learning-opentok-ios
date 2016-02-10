@@ -66,7 +66,7 @@ messages. These messages are sent when other clients connect to the session, whe
 audio-video streams to the session, and upon other session-related events, which we will look
 at in the following sections.
 
-## basics.step-5: Publishing an audio video stream to the session
+## Publishing an audio video stream to the session
 
 1. In Xcode, launch the app in a connected iOS device or in the iOS simulator.
 
@@ -172,7 +172,7 @@ superview:
         _publisher = nil;
     }
 
-## basics.step-6: Subscribing to another client's audio-video stream
+## Subscribing to another client's audio-video stream
 
 The [OTSessionDelegate session:streamCreated:] message is sent when a new stream is created in
 the session. The app implements this delegate method with the following:
