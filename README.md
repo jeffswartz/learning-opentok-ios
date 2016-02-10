@@ -5,9 +5,7 @@ This sample app shows how to accomplish basic tasks using the OpenTok iOS SDK.
 It connects the user with another client so that they can share an OpenTok audio-video
 chat session. 
 
-The step-0 branch includes a basic Xcode project.  Before you can test the application,
-you need to make some settings in Xcode and set up a web service to handle some
-OpenTok-related API calls.
+Before you can test the application, you need to make some settings in Xcode:
 
 1. Download the [OpenTok iOS SDK] [1].
 
