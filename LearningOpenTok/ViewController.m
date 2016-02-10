@@ -24,14 +24,18 @@
 }
 
 
-// *** Fill the following variables using your own Project info  ***
-// ***          https://dashboard.tokbox.com/projects            ***
+// ***   Fill the following constants using your own project info      ***
+// ***            https://dashboard.tokbox.com/projects                ***
+// ***                                                                 ***
+// ***   In a shipping app, generate tokens and sessions using an      ***
+// *** OpenTok server SDK (https://tokbox.com/developer/sdks/server/). ***
+
 // Replace with your OpenTok API key
-static NSString* const _apiKey = @"100";
+static NSString* const _apiKey = @"";
 // Replace with your generated session ID
-static NSString* const _sessionId = @"2_MX4xMDB-flR1ZSBOb3YgMTkgMTE6MDk6NTggUFNUIDIwMTN-MC4zNzQxNzIxNX4";
+static NSString* const _sessionId = @"";
 // Replace with your generated token
-static NSString* const _token = @"T1==cGFydG5lcl9pZD0xMDAmc2RrX3ZlcnNpb249dGJwaHAtdjAuOTEuMjAxMS0wNy0wNSZzaWc9NjBkZmVmM2E3Mzg0OTg2OTk1NmVhOWUwZmE5ZTdhZDcwMTZmNmUzYjpzZXNzaW9uX2lkPTJfTVg0eE1EQi1mbFIxWlNCT2IzWWdNVGtnTVRFNk1EazZOVGdnVUZOVUlESXdNVE4tTUM0ek56UXhOekl4Tlg0JmNyZWF0ZV90aW1lPTE0NTUxNDI2NTImcm9sZT1tb2RlcmF0b3Imbm9uY2U9MTQ1NTE0MjY1Mi4yMjg3NzY3ODE0NDEmZXhwaXJlX3RpbWU9MTQ1NzczNDY1Mg==";
+static NSString* const _token = @"";
 
 
 #pragma mark - View lifecycle
