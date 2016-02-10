@@ -21,44 +21,25 @@
     OTPublisher* _publisher;
     OTSubscriber* _subscriber;
     NSString* _archiveId;
-    NSString* _apiKey;
-    NSString* _sessionId;
-    NSString* _token;
 }
+
+
+// *** Fill the following variables using your own Project info  ***
+// ***          https://dashboard.tokbox.com/projects            ***
+// Replace with your OpenTok API key
+static NSString* const _apiKey = @"100";
+// Replace with your generated session ID
+static NSString* const _sessionId = @"2_MX4xMDB-flR1ZSBOb3YgMTkgMTE6MDk6NTggUFNUIDIwMTN-MC4zNzQxNzIxNX4";
+// Replace with your generated token
+static NSString* const _token = @"T1==cGFydG5lcl9pZD0xMDAmc2RrX3ZlcnNpb249dGJwaHAtdjAuOTEuMjAxMS0wNy0wNSZzaWc9NjBkZmVmM2E3Mzg0OTg2OTk1NmVhOWUwZmE5ZTdhZDcwMTZmNmUzYjpzZXNzaW9uX2lkPTJfTVg0eE1EQi1mbFIxWlNCT2IzWWdNVGtnTVRFNk1EazZOVGdnVUZOVUlESXdNVE4tTUM0ek56UXhOekl4Tlg0JmNyZWF0ZV90aW1lPTE0NTUxNDI2NTImcm9sZT1tb2RlcmF0b3Imbm9uY2U9MTQ1NTE0MjY1Mi4yMjg3NzY3ODE0NDEmZXhwaXJlX3RpbWU9MTQ1NzczNDY1Mg==";
+
 
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self getSessionCredentials];
-}
-
-- (void)getSessionCredentials
-{
-    NSString* urlPath = SAMPLE_SERVER_BASE_URL;
-    urlPath = [urlPath stringByAppendingString:@"/session"];
-    NSURL *url = [NSURL URLWithString: urlPath];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:10];
-    [request setHTTPMethod: @"GET"];
-    
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
-        if (error){
-            NSLog(@"Error,%@, URL: %@", [error localizedDescription],urlPath);
-        }
-        else{
-            NSDictionary *roomInfo = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-            _apiKey = [roomInfo objectForKey:@"apiKey"];
-            _token = [roomInfo objectForKey:@"token"];
-            _sessionId = [roomInfo objectForKey:@"sessionId"];
-            
-            if(!_apiKey || !_token || !_sessionId) {
-                NSLog(@"Error invalid response from server, URL: %@",urlPath);
-            } else {
-                [self doConnect];
-            }
-        }
-    }];
+    [self doConnect];
 }
 
 - (BOOL)prefersStatusBarHidden
