@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <OpenTok/OpenTok.h>
+// Save a copy of the SampleConfig.h file named Config.h. See the README file.
 #import "Config.h"
 
 @interface ViewController : UIViewController

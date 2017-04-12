@@ -52,23 +52,27 @@ PHP-enabled web server. See the basics.step-2 section for more information.
 
 ## basics.step-1: Starting Point
 
-The step-0 branch includes a basic Xcode project.  Before you can test the application,
+This branch includes a basic Xcode project. Before you can test the application,
 you need to make some settings in Xcode and set up a web service to handle some
 OpenTok-related API calls.
 
-1. Download the [OpenTok iOS SDK] [1].
+This project uses CocoaPods to load the OpenTok SDK:
 
-2. Locate the LearningOpenTok.xcodeproj file and open it in Xcode.
+# Install CocoaPods as described in [CocoaPods Getting
+  Started](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 
-3. Include the OpenTok.framework in the list of frameworks used by the app.
-   From the OpenTok iOS SDK, you can drag the OpenTok.framework file into the list of
-   frameworks in the Xcode project explorer for the app.
+# In Terminal, `cd` to your project directory and enter the following:
 
-4. Copy the SampleConfig.h file to a Config.h file.
+  `pod install`
 
-   Copy the contents of the SampleConfig.h file to the clipboard. Then select
-   File > New > File (Command-N). In the dialog that is displayed, select
-   Header File, click Next, and save the file as Config.h.
+# Open the LearningOpenTok.xcworkspace file in XCode.
+
+You will notice the project is missing a header file -- Config.h. To fix this,
+copy the SampleConfig.h file to a Config.h file.
+
+* Copy the contents of the SampleConfig.h file to the clipboard. Then select
+  File > New > File (Command-N). In the dialog that is displayed, select
+  Header File, click Next, and save the file as Config.h.
 
   We will set values for the constants defined in this file in a later step.
 
@@ -102,7 +106,7 @@ file in the learning-opentok-php repo for instructions.
 ## basics.step-3 (server-side): Generating a token (server side)
 
 The web service also creates a token that the client uses to connect to the OpenTok session.
-The HTTP GET request to the /service endpoint returns a response that includes the OpenTok
+The HTTP GET request to the /session endpoint returns a response that includes the OpenTok
 session ID and token.
 
 You will want to authenticate each user (using your own server-side authentication techniques)
